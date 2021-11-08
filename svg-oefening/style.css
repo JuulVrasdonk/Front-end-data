@@ -1,0 +1,50 @@
+body {
+  background-color: #181818;
+}
+
+.animated {
+  -webkit-animation: rec-circle 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+          animation: rec-circle 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.background {
+  fill: white;
+  opacity: .3;
+}
+
+@-webkit-keyframes rec-circle {
+  0% {
+    height: 33%;
+    opacity: 1;
+  }
+  50% {
+    height: 100%;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    height: 10px;
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+    opacity: 1;
+  }
+}
+
+@keyframes rec-circle {
+  0% {
+    height: 33%;
+    opacity: 1;
+  }
+  50% {
+    height: 100%;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    height: 10px;
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */
