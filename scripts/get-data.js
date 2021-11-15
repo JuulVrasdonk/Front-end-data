@@ -4,7 +4,7 @@ export default async function getPages() {
   let page = 1;
   
   const cities = []
-
+  console.log(typeof cities);
   do {
     // try catch to catch any errors in the async api call
     try {
@@ -25,7 +25,7 @@ export default async function getPages() {
       destinations.forEach(singleData => {
             let city = singleData.city
             if (typeof city === "string") {
-              cities.push(`${city},`)
+              cities.push(city)
             } else {
               // cities = null 
             }
