@@ -4,7 +4,7 @@ import getPages from "./get-data.js";
 export async function getCoordinate() { 
 
     let cities = await getPages();
-    let coordinateArray = [];
+    let coordinateArray = [[4.764889304704452, 52.30728346742136]];
     // console.log(coordinateArray);
 
         for(let city of cities) {

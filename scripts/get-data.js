@@ -39,7 +39,7 @@ export default async function getPages() {
       console.error(`Oeps, something is wrong ${err}`);
     }
     // keep running until there's no next page
-  } while (page < 50);
+  } while (page < 10);
   return cities
 }
 
