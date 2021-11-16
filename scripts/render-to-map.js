@@ -1,20 +1,20 @@
 import {getCoordinate} from "./geocoding.js";
 
-export function renderToMap() {
+export async function renderToMap() {
 
     // The value for 'accessToken' begins with 'pk...'
 mapboxgl.accessToken = 'pk.eyJ1IjoianV1bHZyYXNkb25rIiwiYSI6ImNrdnRnbW8ydjByZGgyb205ZmZvZWJjYW4ifQ.1kI6XuFZQ1JkxTAjgzjcrA'; 
 const map = new mapboxgl.Map({
   container: 'map',
-  // Replace YOUR_STYLE_URL with your style URL.
-  style: 'mapbox://styles/mapbox/streets-v9', 
+  style: 'mapbox://styles/juulvrasdonk/ckw1xzwxt4kum14mprcvnfxq8', 
   center: [4.8780881169916785, 52.37720940712757],  
-  zoom: 1.7
+  zoom: 1,
+  minZoom: .8
 });
 
 // Dummy data van mijn huis(ongeveer), Fest en Leeuwenburg
-let data = getCoordinate();
-
+let data = await getCoordinate();
+console.log(data);
 // Ik maak een container variable en selecteer 
 //hierin de container waar mijn Mapbox map zich in bevindt
 const container = map.getCanvasContainer();
@@ -45,7 +45,7 @@ const dots = svg
   .data(data)
   .enter()
   .append("circle")
-  .attr("r", 10)
+  .attr("r", 5)
   .style("fill", "#ff0000");
 
 

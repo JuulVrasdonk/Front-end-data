@@ -5,7 +5,7 @@ export async function getCoordinate() {
 
     let cities = await getPages();
     let coordinateArray = [];
-    console.log(typeof cities);
+    // console.log(coordinateArray);
 
         for(const city of cities) {
             let cityLocation
@@ -26,9 +26,8 @@ export async function getCoordinate() {
             } catch(err) {
 
             }
-            
-            
         }
+    return coordinateArray
 }
 
 

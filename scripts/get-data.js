@@ -3,8 +3,9 @@ export default async function getPages() {
   const baseUrl = `https://api.schiphol.nl/public-flights/destinations?page=`;
   let page = 1;
   
-  const cities = []
-  console.log(typeof cities);
+  let cities = []
+
+
   do {
     // try catch to catch any errors in the async api call
     try {
@@ -40,6 +41,5 @@ export default async function getPages() {
     // keep running until there's no next page
   } while (page < 50);
   return cities
-  // let's log out our new people array
 }
 
