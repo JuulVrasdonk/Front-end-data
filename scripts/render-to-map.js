@@ -8,8 +8,7 @@ const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/juulvrasdonk/ckw1xzwxt4kum14mprcvnfxq8', 
   center: [4.8780881169916785, 52.37720940712757],  
-  zoom: 1,
-  minZoom: .8
+  minZoom: .5
 });
 
 // Dummy data van mijn huis(ongeveer), Fest en Leeuwenburg
@@ -45,8 +44,9 @@ const dots = svg
   .data(data)
   .enter()
   .append("circle")
-  .attr("r", 5)
-  .style("fill", "#ff0000");
+  .attr("r", 3)
+  .style("fill", "#1B60DB")
+  .style("opacity", ".7")
 
 
 // Nu render ik de dots SVG's naar de kaart door ze door de 
