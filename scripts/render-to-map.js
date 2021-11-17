@@ -1,6 +1,8 @@
-import {getCoordinate} from "./geocoding.js";
 
-export async function renderToMap() {
+
+
+
+export function renderToMap() {
   mapboxgl.accessToken = 'pk.eyJ1IjoianV1bHZyYXNkb25rIiwiYSI6ImNrdnRnbW8ydjByZGgyb205ZmZvZWJjYW4ifQ.1kI6XuFZQ1JkxTAjgzjcrA'; 
   const map = new mapboxgl.Map({
     container: 'map',
@@ -11,8 +13,11 @@ export async function renderToMap() {
   });
 
   // Ik laad hier de data in die ik ophaal uit geocoding.js
-  let data = await getCoordinate();
-  
+  d3.json("../data.json").then((data) => {
+    update(data)
+  })
+
+  function update(data) {
   // Ik maak een container variable en selecteer 
   // hierin de container waar mijn Mapbox map zich in bevindt
   const container = map.getCanvasContainer();
@@ -74,4 +79,5 @@ export async function renderToMap() {
         map.on("viewreset", render);
         map.on("move", render);
         map.on("moveend", render);
-};
+}
+}
