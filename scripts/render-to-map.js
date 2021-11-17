@@ -1,7 +1,3 @@
-
-
-
-
 export function renderToMap() {
   mapboxgl.accessToken = 'pk.eyJ1IjoianV1bHZyYXNkb25rIiwiYSI6ImNrdnRnbW8ydjByZGgyb205ZmZvZWJjYW4ifQ.1kI6XuFZQ1JkxTAjgzjcrA'; 
   const map = new mapboxgl.Map({
@@ -13,7 +9,7 @@ export function renderToMap() {
   });
 
   // Ik laad hier de data in die ik ophaal uit geocoding.js
-  d3.json("../data.json").then((data) => {
+  d3.json("./data.json").then((data) => {
     update(data)
   })
 
