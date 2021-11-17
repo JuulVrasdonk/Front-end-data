@@ -12,7 +12,7 @@ export async function renderToMap() {
 
   // Ik laad hier de data in die ik ophaal uit geocoding.js
   let data = await getCoordinate();
-  console.log(data);
+  
   // Ik maak een container variable en selecteer 
   // hierin de container waar mijn Mapbox map zich in bevindt
   const container = map.getCanvasContainer();
