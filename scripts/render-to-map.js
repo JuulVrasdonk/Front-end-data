@@ -3,13 +3,13 @@ export function renderToMap() {
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/juulvrasdonk/ckw1xzwxt4kum14mprcvnfxq8', 
-    center: [20.5854738679537563, 25.83355015464672], 
+    center: [10.5854738679537563, 25.83355015464672], 
     zoom: 1.8,
     minZoom: .5
   });
 
   // Ik laad hier de data in die ik ophaal uit geocoding.js
-  d3.json("./data.json").then((data) => {
+  d3.json("../data.json").then((data) => {
     update(data)
   })
 
@@ -44,17 +44,16 @@ export function renderToMap() {
     .data(data)
     .enter()
     .append("circle")
-    .attr("r", 3)
+    .classed("dot", true)
+    .attr("r", 5)
     .style("fill", "#1B60DB")
-    .style("opacity", ".7")
 
 
-  d3.select("circle:first-of-type")
+  d3.select("circle:last-of-type")
     .attr("r", 10)
+    .attr("id", "schiphol")
     .style("fill", "#914BD2")
-    .style("opacity", "1")
 
-  
 
   // Nu render ik de dots SVG's naar de kaart door ze door de 
   // project functie heen te halen. Via cx en cy hieraan te 
@@ -69,6 +68,26 @@ export function renderToMap() {
           return project(d).y;
         });
   }
+
+
+  // Hier voeg ik een kleine staggering animation toe met GSAP. 
+  const dotTl = gsap.timeline();
+
+  dotTl.from(".dot", {
+    duration: 1,
+    opacity: 0
+  })
+  .from(".dot", {
+    opacity: 0,
+    scale: 0
+  })
+
+  .to(".dot", {
+    scale: 1, 
+    opacity: .7,
+    stagger: .007, 
+    ease: Elastic.easeOut.config(1, 0.3)
+  })
 
   // Hier vertel ik wat dots moeten als ik in- of uitzoom of beweeg.
   render();
