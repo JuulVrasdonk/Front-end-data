@@ -17,7 +17,7 @@
 Clone the GitHub Repo locally
 
 ```
-git clone https://github.com/JuulVrasdonk/functional-programming
+git clone https://github.com/JuulVrasdonk/frond-end-data
 ```
 
 Install the Packages
@@ -40,6 +40,8 @@ npm start
 
 - [git](https://git-scm.com/)
 - [json](https://www.json.org/json-en.html)
+- [mapbox](https://docs.mapbox.com/mapbox-gl-js/guides/)
+- [schiphol-flights](https://www.schiphol.nl/en/developer-center/page/our-flight-api-explored/)
 
 ## Visuals
 
@@ -50,17 +52,16 @@ These are the current visuals
 Of course all files are important but you should at least have a look at these files if you are interested in this repo.
 Viewing these files will give you an idea of how this feature is built.
 
-[index.js](https://github.com/JuulVrasdonk/functional-programming/blob/main/index.html) 
+[render-to-map.js](https://github.com/JuulVrasdonk/Front-end-data/blob/master/scripts/render-to-map.js) 
 
-[index.ejs](https://github.com/JuulVrasdonk/functional-programming/blob/main/app.js) 
+[get-data.js](https://github.com/JuulVrasdonk/Front-end-data/blob/master/scripts/get-data.js) 
 
-
-[package.json](https://github.com/JuulVrasdonk/functional-programming/blob/main/script.js) 
+[data.json](https://github.com/JuulVrasdonk/Front-end-data/blob/master/data.json) 
 
 ## Meta
 
-Juul Vrasdonk - juulvrasdonk@gmail.com - https://github.com/JuulVrasdonk/functional-programming
+Juul Vrasdonk - juulvrasdonk@gmail.com - https://github.com/JuulVrasdonk/front-end-data
 
 ## License
 
-Usage is provided under the [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt) MIT. See [LICENSE](https://github.com/TristanVarewijck/functional-programming/blob/master/LICENSE) for the full details.
+Usage is provided under the [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt) MIT. See [LICENSE](https://github.com/JuulVrasdonk/front-end-data/blob/master/LICENSE) for the full details.
