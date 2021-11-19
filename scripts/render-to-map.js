@@ -9,7 +9,7 @@ export function renderToMap() {
   });
 
   // Ik laad hier de data in die ik ophaal uit geocoding.js
-  d3.json("../data.json").then((data) => {
+  d3.json("./data.json").then((data) => {
     update(data)
   })
 
